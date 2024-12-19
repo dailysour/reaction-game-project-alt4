@@ -1,6 +1,4 @@
-# Note this code will only work on microbit due to these having built in functions for python
 
-# Displays high score for player one
 def on_button_pressed_a():
     global gameStart
     gameStart = False
@@ -9,7 +7,6 @@ def on_button_pressed_a():
     basic.pause(5000)
 input.on_button_pressed(Button.A, on_button_pressed_a)
 
-# Code that makes 'dots' appear on the microbit's LED scren in preparation for the press button alert
 def scrollDots():
     for index in range(randint(1, 4)):
         basic.show_leds("""
@@ -27,14 +24,14 @@ def scrollDots():
             . # . # .
             """)
 
-#When you press a and b together it resets the high scores
+
 def on_button_pressed_ab():
     global p1Score, p2Score
     p1Score = 0
     p2Score = 0
 input.on_button_pressed(Button.AB, on_button_pressed_ab)
 
-#Displays player 2 score
+
 def on_button_pressed_b():
     global gameStart
     gameStart = False
@@ -45,7 +42,7 @@ def on_button_pressed_b():
     basic.clear_screen()
 input.on_button_pressed(Button.B, on_button_pressed_b)
 
-#Resets varaibles on start up
+
 time = 0
 gamerunning = False
 gameStart = False
@@ -54,7 +51,7 @@ p1Score = 0
 p1Score = 0
 p2Score = 0
 
-#Alert telling player to press button as soon as possible
+
 def on_forever():
     global gameStart, gamerunning, p1Score, time, p2Score
     gameStart = False
